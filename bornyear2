@@ -1,0 +1,128 @@
+import datetime
+
+
+class TheBornExpert:
+    BornDay = []
+    theNames = []
+
+    personIndex = 0
+
+    YearOfBorn = ''
+    MonthOfBorn = ''
+    DayOfBorn = ''
+
+    # ===================================================================================
+
+    def __init__(self, personIndex):
+
+        self.personIndex = personIndex
+        self.theNames.append('Stalin')
+        self.BornDay.append([datetime.date(1879, 12, 21), self.theNames[self.personIndex]])
+
+        # =====1234-12-12=====
+        # =====0  4===========
+        # ==========57========
+        # =============810====
+
+        self.dateScaner(self.BornDay[0][personIndex], 0)
+        self.dateScaner(self.BornDay[0][personIndex], 5)
+        self.dateScaner(self.BornDay[0][personIndex], 8)
+
+        print(f'{self.YearOfBorn}>>>{self.MonthOfBorn}>>>{self.DayOfBorn}')
+
+    # ========================================================================================
+
+    def dateScaner(self, bornDay, index):
+        objdate = datetime.datetime.strptime(str(bornDay), "%Y-%m-%d")
+        # ====================== смотри форматы strptime ! ^^^^^^^^^^ ==========
+
+        if index == 0:
+            self.YearOfBorn = str(objdate.date())
+            self.YearOfBorn = self.YearOfBorn[index: 4]
+        elif index == 5:
+            self.MonthOfBorn = str(objdate.date())
+            self.MonthOfBorn = self.MonthOfBorn[index: 7]
+        elif index == 8:
+            self.DayOfBorn = str(objdate.date())
+            self.DayOfBorn = self.DayOfBorn[index: 10]
+
+    # ========================================================================================
+
+    def print_bornDay(self):
+        print()
+        print(f'the BornDay of {self.BornDay[0][1]} is: {self.BornDay[0][0]}')
+
+    def getBornYear(self, personIndex):
+        print(f'+------------------------------------------+')
+        print(f'|  what is the year BornDay of {self.BornDay[personIndex][1]} : ')
+        print(f'| ', end=" "); by = input('year > ')
+        print(f'+------------------------------------------+')
+        return by
+
+    def getBornMonth(self, personIndex):
+        print(f'+------------------------------------------+')
+        print(f'|  what is the month BornDay of {self.BornDay[personIndex][1]} : ')
+        print(f'| ', end=" "); bm = input('month > ')
+        print(f'+------------------------------------------+')
+        return bm
+
+    def getBornDay(self, personIndex):
+        print(f'+------------------------------------------+')
+        print(f'|  what is the day BornDay of {self.BornDay[personIndex][1]} : ')
+        print(f'| ', end=" "); bd = input('day > ')
+        print(f'+------------------------------------------+')
+        return bd
+
+    def bornTester(self, personIndex):
+        # ===================================================================================
+
+        by = self.getBornYear(personIndex)
+        self.bornComparer(0, by, personIndex)
+
+        # ===================================================================================
+
+        bm = self.getBornMonth(personIndex)
+        self.bornComparer(1, bm, personIndex)
+
+        # ===================================================================================
+
+        bd = self.getBornDay(personIndex)
+        self.bornComparer(2, bd, personIndex)
+
+        # ===================================================================================
+
+        bornDatesring = str(by) + '-' + str(bm) + '-' + str(bd)
+        self.print_bornDay(personIndex, bornDatesring)
+
+    def bornComparer(self, code, YMD, personIndex):  # year,month,day
+
+        if code == 0:
+            print(f'{self.YearOfBorn} >>> {YMD}', end=" ")
+
+            if self.YearOfBorn == YMD:
+                print(f'you are right about {self.BornDay[personIndex][1]}\'s year of born')
+            else:
+                print(f'you are wrong about year of born of {self.BornDay[personIndex][1]}')
+                exit(code)
+
+        elif code == 1:
+            print(f'{self.MonthOfBorn} >>> {YMD}', end=" ")
+
+            if self.MonthOfBorn == YMD:
+                print(f'you are right about {self.BornDay[personIndex][1]}\'s month of born')
+            else:
+                print(f'you are wrong about month of born of {self.BornDay[personIndex][1]}')
+                exit(code)
+
+        elif code == 2:
+            print(f'{self.DayOfBorn} >>> {YMD}', end=" ")
+
+            if self.DayOfBorn == YMD:
+                print(f'you are right about {self.BornDay[personIndex][1]}\'s day of born')
+            else:
+                print(f'you are wrong about day of born of {self.BornDay[personIndex][1]}')
+                exit(code)
+
+    def print_bornDay(self, personIndex, bornDateString):
+        print()
+        print(f'the {self.BornDay[personIndex][1]}\'s BornDay is: {bornDateString}')
