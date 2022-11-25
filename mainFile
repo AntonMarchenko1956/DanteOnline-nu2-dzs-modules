@@ -1,0 +1,27 @@
+import module_1
+import module_2
+import module_3
+import module_4
+import module_5
+import module_6
+
+
+def main():
+
+    # # ============= for module_1 ================
+    # module_1.print_module_1()
+    # module_1.types_in_module_1()
+    # # ============= for module_2 ================
+    # module_2.DateTimeTest(0)
+    # # ============= for module_3 ================
+    # module_3.DateTimeTest(0)
+    # # ============= for module_4 ================
+    # module_4.DateTimeTest(0)
+    # # ============= for module_5 ================
+    # module_5.DateTimeTest(0)
+    # # ============= for module_6 ================
+    module_6.DateTimeTest(10)
+
+if  __name__ == '__main__':
+    main()
+
