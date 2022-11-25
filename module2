@@ -1,0 +1,16 @@
+"""
+ (МОДУЛЬ 2) В проекте создать новый модуль bornyear.py
+ Написать программу используя условные операторы:
+- Спросить у пользователя год рождения А.С Пушкина
+- Если пользователь ввел верный год вывести 'Верно'
+- Если пользователь ошибся вывести 'Неверно'
+
+"""
+from bornyear import TheBornExpert
+
+def DateTimeTest(nPers):
+
+    be = TheBornExpert()
+    be.print_bornDay()
+    be.bornTester(nPers)
+    be.bornComparer()
