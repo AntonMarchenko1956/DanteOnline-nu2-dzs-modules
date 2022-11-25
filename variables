@@ -1,0 +1,163 @@
+
+
+class TheShip:   # корабль
+
+    ships = [[], []]
+
+    shipsLength = []
+
+    warship = ['No WAR', 'FOR WAR']
+
+    typeOfMastedShip = ['no-masted', 'single-masted', 'double-masted', 'three-masted', 'four-masted']
+                        # Одномачтовые: Египетская папирусная лодка, Драккар, Канонерка,
+                        # Двухмачтовые: бриг, бригантина, шнява, шхуна, галера (Real)
+                        # Трехмачтовые: Каракка, галеон, каравелла, фрегат, клипер, корвет
+                        # Четырёхмачтовый: барк
+    shipsMasted = [
+                   ['None'],
+                   ['egyptian_papyrus_boat', 'drakkar', 'gunboat'],
+                   ['brig', 'brigantine', 'shnyava', 'schooner', 'galley'],
+                   ['karakka', 'galleon', 'caravel', 'frigate', 'clipper', 'corvette'],
+                   ['barque']
+                  ]
+
+    typeOfMotorShip = ['war-ship', 'cargo-ship', 'passenger-ship']
+
+    LengthWidthSpeed  = [
+        [
+            10.0, 300.0  #   minLength, maxLength
+        ],
+        [
+            5.0, 100.0    #   minWidth, maxWidth
+        ],
+        [
+            15.0, 35.0    #   minSpeed, maxSpeed
+        ]
+                        ]
+
+
+    shipMotors = [
+                    ['None'],
+                    ['Aircraft-carrier', 'Cruiser', 'Universal-landing-ship', 'Destroyer', 'Frigate', 'Corvette', 'Landing ship'],
+                    ['tanker', 'bulk-wine-carrier', 'gas-carrier', 'bulk-carrier', 'ro-ro'],
+                    ['liner-cruise', 'liner-river-cruise', 'ferry-car-passenger', 'ferry-railway-passenger']
+                 ]
+    # боевые: авианосец, Крейсер, Универсальный десантный корабль,Эсминец,Фрегат,Корвет,Десантный корабль
+    # грузовые: наливной-танкер,наливной-виновоз,газовоз,балкер,ролкер
+    # пассажирские: лайнер-круизный, лайнер-речной-круизный, паром-автомобильно-пассажирский,паром-железнодорожно-пассажирский.
+
+    def __init__(self):
+
+        self.ships[0].append(self.typeOfMastedShip[0] + ' ' + self.shipsMasted[0][0] + ' ' + str(self.warship[0]))
+
+        self.ships[0].append(self.typeOfMastedShip[1] + ' ' + self.shipsMasted[1][0] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[1] + ' ' + self.shipsMasted[1][1] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[1] + ' ' + self.shipsMasted[1][2] + ' ' + str(self.warship[1]))
+
+        self.ships[0].append(self.typeOfMastedShip[2] + ' ' + self.shipsMasted[2][0] + ' ' + str(self.warship[1]))
+        self.ships[0].append(self.typeOfMastedShip[2] + ' ' + self.shipsMasted[2][1] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[2] + ' ' + self.shipsMasted[2][2] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[2] + ' ' + self.shipsMasted[2][3] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[2] + ' ' + self.shipsMasted[2][4] + ' ' + str(self.warship[0]))
+
+        self.ships[0].append(self.typeOfMastedShip[3] + ' ' + self.shipsMasted[3][0] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[3] + ' ' + self.shipsMasted[3][1] + ' ' + str(self.warship[1]))
+        self.ships[0].append(self.typeOfMastedShip[3] + ' ' + self.shipsMasted[3][2] + ' ' + str(self.warship[0]))
+        self.ships[0].append(self.typeOfMastedShip[3] + ' ' + self.shipsMasted[3][3] + ' ' + str(self.warship[1]))
+        self.ships[0].append(self.typeOfMastedShip[3] + ' ' + self.shipsMasted[3][4] + ' ' + str(self.warship[1]))
+        self.ships[0].append(self.typeOfMastedShip[3] + ' ' + self.shipsMasted[3][5] + ' ' + str(self.warship[1]))
+
+        self.ships[0].append(self.typeOfMastedShip[4] + ' ' + self.shipsMasted[4][0] + ' ' + str(self.warship[1]))
+
+        self.shipsLength.append(len(self.ships[0]))
+
+    # ===================================================================================================
+
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[0][0] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0)+'/' +
+                             str(self.LengthWidthSpeed[1][0] * 0)+'/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][0] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0)+'/' +
+                             str(self.LengthWidthSpeed[1][0] * 0)+'/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][1] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0)+'/' +
+                             str(self.LengthWidthSpeed[1][0] * 0)+'/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][2] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][3] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][4] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][5] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[0] + ' ' + self.shipMotors[1][6] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[2][0] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[2][1] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[2][2] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[2][3] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[2][4] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+
+
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[3][0] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[3][1] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[3][2] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+        self.ships[1].append(self.typeOfMotorShip[1] + ' ' + self.shipMotors[3][3] + ' ' +
+                             str(self.LengthWidthSpeed[0][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[1][0] * 0) + '/' +
+                             str(self.LengthWidthSpeed[2][0] * 0))
+
+        self.shipsLength.append(len(self.ships[1]))
+
+
+def shipInfo(ships, shipNum):
+    print(f'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{shipNum}~~~~~')
+    if shipNum in range(0, len(ships[0])):
+        print(f'~~~~~{ships[0][shipNum]}~~~~~')
+    else:
+        print(f'~~~~~{ships[0][0]}:No ship ~~~~~')
+
+    print(f'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{shipNum}~~~~~')
+    if shipNum in range(0, len(ships[1])):
+        print(f'~~~~~{ships[1][shipNum]}~~~~~')
+    else:
+        print(f'~~~~~{ships[1][0]}:No ship ~~~~~')
