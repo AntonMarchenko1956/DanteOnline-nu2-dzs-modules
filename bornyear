@@ -1,0 +1,36 @@
+import datetime
+
+class TheBornExpert:
+    BornDay = []
+    theNames = []
+
+    def __init__(self):
+       self.theNames.append('Stalin')
+       self.BornDay.append([datetime.date(1879, 12, 21), self.theNames[0]])
+
+    def print_bornDay (self):
+        print()
+        print(f'the BornDay of {self.BornDay[0][1]} is: {self.BornDay[0][0]}')
+
+    def bornTester(self, personIndex):
+        print(f'+------------------------------------------+')
+        print(f'|  what is the BornDay of {self.BornDay[personIndex][1]} : ')
+        print(f'| ', end=" "); bornYear = input('year > ')
+        print(f'| ', end=" "); bornMonth = input('month > ')
+        print(f'| ', end=" "); bornDay = input('day > ')
+        print(f'+------------------------------------------+')
+
+        bornString = str(bornYear) +'-'+ str(bornMonth) +'-'+ str(bornDay)
+
+        dt = datetime.datetime.strptime(bornString, "%Y-%m-%d")
+        self.xdate = str(dt.date())
+        print(f'the Born Day of {self.theNames[personIndex]} is {self.xdate}')
+
+    def bornComparer(self):
+        objdate = datetime.datetime.strptime(str(self.BornDay[0][0]), "%Y-%m-%d")
+        date0 = str(objdate.date())
+
+        if date0 == self.xdate:
+            print(f'you are RIGHT!', end=" "); print(f' {self.xdate} == {date0}')
+        else:
+            print('you are WRONG!', end=" "); print(f' {self.xdate} != {date0}')
